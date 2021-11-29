@@ -11,7 +11,7 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/colors", router);
+app.use("/api/v1/colors", router);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });

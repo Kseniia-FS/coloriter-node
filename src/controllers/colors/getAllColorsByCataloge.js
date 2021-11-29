@@ -6,6 +6,7 @@ const getAllColorsByCataloge = async (req, res) => {
   const result = await getColorByCataloge(cataloge);
 
   if (!result) {
+    res.status(400).json({ message: "Change query params", status: failed });
     throw new HTTP400Error("Change query params");
   }
 
