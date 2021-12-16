@@ -45,7 +45,7 @@ const getAllColorsByColor = async (color) => {
   }
   if (color === "violet") {
     let result = await Color.find({
-      name: /lavendel|aquarell|viola|clematis|r50b|343|344|345|346|347/i,
+      name: /lavendel|aquarell|viola|clematis|r50b|343|344|346|347/i,
     });
     return result;
   }
