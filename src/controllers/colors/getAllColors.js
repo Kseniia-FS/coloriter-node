@@ -1,10 +1,9 @@
-const getAllColorsByColor = require("../../services/getAllColorsByColor");
+const { getAllColorsHandler } = require("../../services");
 const { HTTP404Error } = require("../../helpers/error");
 
-const getColorsByColor = async (req, res) => {
-  const { color } = req.params;
+const getAllColors = async (req, res) => {
+  const result = await getAllColorsHandler();
 
-  const result = await getAllColorsByColor(color);
   if (!result) {
     res.status(404).json({ message: "Colors nor found", status: failed });
     throw new HTTP404Error("Colors nor found");
@@ -12,4 +11,4 @@ const getColorsByColor = async (req, res) => {
   return res.json({ status: "success", code: 200, data: result });
 };
 
-module.exports = getColorsByColor;
+module.exports = getAllColors;
